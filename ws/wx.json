@@ -1,0 +1,22 @@
+
+
+{
+  "button": [
+      {
+          "type": "view", 
+          "name": "个人网站", 
+          "url": "http://dengzhenzhang.top"
+      }, 
+      {
+          "name": "失物招领", 
+          "sub_button": [
+              {
+                  "type": "view", 
+                  "name": "订阅通知", 
+                  "url": "http://localhost:9000"
+              }
+          ]
+      }
+
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "ws",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "generic-pool": "^3.9.0",
+    "ioredis": "^5.3.2",
+    "ws": "^8.13.0"
+  }
+}
