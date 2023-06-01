@@ -5,6 +5,8 @@
 
 # 小程序总体功能
 ![image](https://github.com/zhangdengzhen/Lost-and-Found-Interview/assets/68335755/f90070fd-42e7-4b0b-9799-e2d1b646993d)
+# knife4j接口文档
+![image](https://github.com/zhangdengzhen/Lost-and-Found-Interview/assets/68335755/0c259086-10f9-4a2b-b68b-f2156a383b02)
 
 # 小程序演示
 ## 首页-详情
