@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<wxs module="stringSub" src="../../util/string.wxs"></wxs>
+<view class="home">
+  <view class="home-search">
+    <van-search bindtap="handleSearch" readonly disabled model:value="{{ value }}" focus="{{true}}" placeholder="请输入搜索关键词" bind:search="onSearch" use-left-icon-slot use-right-icon-slot >
+      <van-icon slot="left-icon" name="search" size="40rpx" />
+      <van-icon slot="right-icon" name="photo-o" size="40rpx" />
+    </van-search>
+  </view>
+  <view class="home-checkbox">
+    <van-radio-group value="{{ radio }}" direction="horizontal" bind:change="onChange">
+      <van-radio name="pick">拾取</van-radio>
+      <van-radio name="lose">丢失</van-radio>
+      <van-radio name="finish">已完成</van-radio>
+    </van-radio-group>
+  </view>
+
+  <scroll-view class="home-scroll" scroll-y="{{true}}" bindscrolltolower="handlebottom">
+    <view bindtap="handleTodetail" data-id="{{item.id}}" wx:for="{{list}}" wx:key="id" class="home-content van-hairline--top-bottom">
+      <van-image width="3rem" height="3rem" src="{{item.imgs[0].url}}" />
+      <text>{{item.title}}</text>
+      <text>{{stringSub.substring(item.time,0,10)}}</text>
+    </view>
+    <van-empty wx:if="{{empty}}"  description="暂无数据" />
+  </scroll-view>
+  
+</view>

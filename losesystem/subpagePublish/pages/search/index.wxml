@@ -1,0 +1,31 @@
+<!--subpagePublish/pages/search/index.wxml-->
+<wxs module="stringSub" src="../../../util/string.wxs"></wxs>
+<view class="search">
+  <view class="home-search">
+    <van-search model:value="{{ value }}" focus="{{true}}" placeholder="请输入搜索关键词" bind:search="onSearch" use-left-icon-slot use-right-icon-slot>
+      <van-icon slot="left-icon" name="search" size="40rpx" />
+      <van-uploader slot="right-icon" bind:after-read="afterRead">
+        <van-icon name="photo-o" size="40rpx" />
+      </van-uploader>
+    </van-search>
+  </view>
+  <scroll-view class="home-scroll" scroll-y="{{true}}" bindscrolltolower="handlebottom">
+    <block wx:if="{{liststate}}">
+      <view bindtap="handletodetail" data-item="{{item}}" wx:for="{{list}}" wx:key="id" class="home-content van-hairline--top-bottom">
+        <van-image width="3rem" height="3rem" src="{{item.imgs[0].url}}" />
+        <text>{{item.title}}</text>
+        <text>{{stringSub.substring(item.time,0,10)}}</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="upload">
+        <view class="show van-hairline--surround" bindtap="handeltodetail2" data-name="{{item.name}}" wx:for="{{listimg}}" wx:key="name">
+          <van-image width="8rem" height="8rem" fit="cover" src="{{item.name}}" />
+          <text class="van-ellipsis">相似度:{{item.value}}</text>
+        </view>
+
+      </view>
+    </block>
+    <van-empty wx:if="{{empty}}" description="暂无数据" />
+  </scroll-view>
+</view>

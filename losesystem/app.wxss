@@ -1,0 +1,8 @@
+/**app.wxss**/
+@import './miniprogram_npm/@vant/weapp/common/index.wxss';
+page {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+}

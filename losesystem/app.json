@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/manage/index",
+    "pages/info/index",
+    "pages/me/index"
+  ],
+  "subPackages": [
+    {
+      "root": "subpagePublish",
+      "pages": [
+        "pages/publish/index",
+        "pages/pick/index",
+        "pages/lose/index",
+        "pages/detail/index",
+        "pages/search/index"
+      ]
+    },
+    {
+      "root": "subpageChat",
+      "pages": [
+        "pages/chat/index"
+      ]
+    },
+    {
+      "root": "subpageMe",
+      "pages": [
+        "pages/mydetail/index",
+        "pages/nickname/index",
+        "pages/school/index",
+        "pages/phone/index",
+        "pages/probrem/index",
+        "pages/indentify/index"
+      ]
+    }
+  ],
+  "tabBar": {
+    "selectedColor": "#007ffc",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "assert/home.png",
+        "iconPath": "assert/home-copy.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/manage/index",
+        "selectedIconPath": "assert/all.png",
+        "iconPath": "assert/all-copy.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/info/index",
+        "selectedIconPath": "assert/remind.png",
+        "iconPath": "assert/remind-copy.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "selectedIconPath": "assert/user.png",
+        "iconPath": "assert/user-copy.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "校园失物招领",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

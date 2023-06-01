@@ -1,0 +1,25 @@
+<wxs module="stringSub" src="../../../util/string.wxs"></wxs>
+<view class="home-checkbox van-hairline--bottom">
+  <van-radio-group value="{{ radio }}" direction="horizontal" bind:change="onChange">
+    <!-- <van-radio name="all">所有</van-radio> -->
+    <van-radio name="pick">我捡到的</van-radio>
+    <van-radio name="lose">我丢失的</van-radio>
+    <van-radio name="finish">已完成</van-radio>
+  </van-radio-group>
+</view>
+<view wx:for="{{list}}" wx:key="id" class="swiper-cell van-hairline--bottom">
+  <van-swipe-cell right-width="{{ 130 }}">
+    <view class="swiper-content van-hairline--top-bottom">
+      <van-image width="3rem" height="3rem" src="{{item.imgs[0].url}}" />
+      <text>{{item.title}}</text>
+      <text>{{stringSub.substring(item.time,0,10)}}</text>
+    </view>
+    <view slot="right" class="right">
+      <view class="right-delete" bindtap="deleteItem" data-id="{{item.id}}" data-type="{{item.type}}"><text>删除</text></view>
+      <view class="right-update" bindtap="updateItem" data-id="{{item.id}}" data-type="{{item.type}}"><text>{{item.type===1?'已被认领':'已被找回'}}</text>
+
+      </view>
+    </view>
+  </van-swipe-cell>
+</view>
+<van-empty wx:if="{{empty}}" description="暂无数据" />

@@ -1,0 +1,24 @@
+<!--subpageMe/pages/probrem/index.wxml-->
+<!-- <van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="问题反馈"> -->
+    <van-cell-group>
+      <van-field required label="问题描述" model:value="{{ problem }}" placeholder="请描述问题" border="{{ true }}" type="textarea" autosize="{{true}}" />
+      <van-field required label="联系方式" model:value="{{ concat }}" placeholder="手机/邮箱" border="{{ true }}" autosize="{{true}}" />
+      <van-uploader bind:after-read="afterRead" file-list="{{ fileList }}" deletable="{{ true }}" bind:delete="handledelete" />
+    </van-cell-group>
+    <view class="bottom">
+      <van-button  type="primary" bindtap="handleSubmit">提交</van-button>
+    </view>
+  <!-- </van-tab> -->
+  <!-- <van-tab title="问题管理">
+   <view class="problem van-hairline--top-bottom" wx:for="{{myproblem}}" wx:key="time">
+     <text class="an-ellipsis">{{item.detail}}</text>
+     <view class="problem_2">
+      <van-tag type="danger" wx:if="{{item.type==='request'}}">问题</van-tag>
+      <van-tag type="success" wx:else>回复</van-tag>
+      <text>{{item.time}}</text>
+     </view>
+   </view>
+  </van-tab> -->
+  <van-overlay show="{{ show }}" bind:click="onClickHide"/>
+<!-- </van-tabs> -->

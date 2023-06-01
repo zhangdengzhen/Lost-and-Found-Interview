@@ -1,0 +1,9 @@
+/* subpagePublish/pages/lose/index.wxss */
+.van-uploader{
+  padding:30rpx !important;
+
+}
+.button{
+  padding:40rpx 0;
+  text-align: center;
+}

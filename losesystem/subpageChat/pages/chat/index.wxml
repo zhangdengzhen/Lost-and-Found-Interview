@@ -1,0 +1,49 @@
+<!--subpageChat/pages/chat/index.wxml-->
+<view class="chatroom">
+  <view style="position: fixed;bottom: 100rpx;top: 0;width: 100%;">
+    <scroll-view scroll-y="{{true}}" style="height: {{windowHeight}}rpx;"  scroll-into-view="{{toitem}}" >
+      <view class="chat" wx:for="{{list}}" wx:key="time" id="item{{index+1}}">
+      <view style="text-align: center;font-size: 20rpx;">
+        <text>{{item.time}}</text>
+      </view>
+        <view class="chat-left" wx:if="{{item.fromOpenid!=openid}}">
+          <view class="chat-left-message" wx:if="{{item.type==='text'}}">
+            <van-image width="3rem" height="3rem" round src="{{myitem.avator}}" />
+            <text class="van-hairline--surround">{{item.message}}</text>
+          </view>
+          <view class="chat-left-img" wx:else>
+            <van-image width="3rem" height="3rem" round src="{{myitem.avator}}" />
+            <van-image class="img" width="100px" fit="widthFix" src="{{item.message}}" />
+          </view>
+        </view>
+
+        <view class="chat-right" wx:else>
+          <view class="chat-right-message" wx:if="{{item.type==='text'}}">
+            <text class="van-hairline--surround">{{item.message}}</text>
+            <van-image width="3rem" height="3rem" round src="{{avator}}" />
+          </view>
+          <view class="chat-right-img" wx:else>
+            <van-image class="img2" width="100px" fit="widthFix" src="{{avator}}" />
+            <van-image width="3rem" height="3rem" round src="{{item.message}}" />
+          </view>
+        </view>
+
+      </view>
+
+    </scroll-view>
+  </view>
+  <!-- 底部输入框 -->
+  <!-- 评论 -->
+  <view class="say" style='bottom:{{inputBottom}}px'>
+    <van-uploader>
+      <van-icon name="photo-o" size="50rpx" />
+    </van-uploader>
+
+    <view class="say1">
+      <input type="text" model:value="{{ say }}" placeholder="请输入内容" bindfocus="foucus" bindblur="blur" adjust-position='{{false}}' />
+    </view>
+    <view class="send" bindtap="sendMessage">
+      <text>发送</text>
+    </view>
+  </view>
+</view>

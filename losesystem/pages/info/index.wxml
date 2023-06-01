@@ -1,0 +1,8 @@
+<!--pages/info/index.wxml-->
+<scroll-view class="info" 	scroll-y="{{true}}" 		bindscrolltolower="handlebottom">
+  <view bindtap="handleChat"  class="item van-hairline--top-bottom" wx:for="{{list}}"  wx:key="openid" data-item="{{item}}">
+    <van-image width="3rem" round height="3rem" src="{{item.avator}}" />
+    <text >{{item.nickname}}</text>
+  </view>
+  <van-empty wx:if="{{empty}}"  description="暂无消息" />
+</scroll-view>

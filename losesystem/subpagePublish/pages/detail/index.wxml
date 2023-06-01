@@ -1,0 +1,55 @@
+<!--subpagePublish/pages/detail/index.wxml-->
+<view class="detail">
+  <view class="share">
+    <view class="share-left">
+      <van-image round width="2.5rem" height="2.5rem" src="{{item.users.avator}}" />
+      <text class="share-nickname">{{item.users.nickname}}</text>
+    </view>
+    <view class="share-right">
+      <text>分享本页面</text>
+      <text bindtap="handleconcat">私聊</text>
+    </view>
+  </view>
+  <van-tag round wx:if="{{item.type===1}}" size="large" type="warning">寻找失主</van-tag>
+  <van-tag round wx:else type="success" size="large">物品丢失</van-tag>
+  <view class="title">
+    <text>标题：</text><text>{{item.title}}</text>
+  </view>
+  <view class="title">
+    <text>时间：</text><text>{{item.time}}</text>
+  </view>
+  <view class="title">
+    <text>类别：</text><text>{{item.category.name}}</text>
+  </view>
+  <view class="title">
+    <text>领取地点：</text><text>{{item.place}}</text>
+  </view>
+  <view class="title">
+    <text>状态：</text>
+    <text wx:if="{{item.status==='ed'&&item.type===1}}" style="color:#07c160">已被认领</text>
+    <text wx:if="{{item.status==='ed'&&item.type===0}}" style="color:#07c160">已被找回</text>
+    <text wx:if="{{item.status==='ing'&&item.type===1}}" style="color:red">等待认领</text>
+    <text wx:if="{{item.status==='ing'&&item.type===0}}" style="color:red">暂未找回</text>
+  </view>
+  <view class="title">
+    <text>详情：</text><text style="word-break:break-all;">{{item.detail}}</text>
+  </view>
+  <view class="title" wx:if="{{item.status==='ed'&&item.type===1}}">
+    <text>申诉：</text>
+    <text bindtap="handlecompalin" style="color: blue;">我要申诉</text>
+  </view>
+
+  <view class="imglist">
+    <text>图片: </text>
+    <view class="imglist_2">
+      <van-uploader file-list="{{ item.imgs }}" show-upload="{{false}}" deletable="{{false}}" />
+    </view>
+  </view>
+  <van-dialog use-slot title="申诉" show="{{ show }}" show-cancel-button bind:confirm="onConfirm" bind:close="onClose" data-id="{{item.id}}">
+    <van-cell-group>
+      <van-field required model:value="{{detail }}" placeholder="请输入详细描述" border="{{ true }}" autosize="{{true}}" />
+      <van-field required model:value="{{ concat }}" placeholder="联系方式" border="{{ true}}" />
+
+    </van-cell-group>
+  </van-dialog>
+</view>

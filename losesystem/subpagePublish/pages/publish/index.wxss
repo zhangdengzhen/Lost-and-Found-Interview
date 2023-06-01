@@ -1,0 +1,42 @@
+/* subpagePublish/pages/publish/index.wxss */
+.home-checkbox{
+  padding: 20rpx 12px;
+}
+.swiper-content{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx 20rpx;
+  justify-content: space-between;
+}
+.swiper-content text:nth-of-type(1){
+  padding-left: 20rpx;
+  flex-grow: 1;
+}
+.swiper-content text:nth-of-type(2){
+  align-self: flex-end;
+}
+.right{
+  width: 130px;
+  height: inherit;
+  display: flex;
+}
+.right-delete{
+  background-color: red;
+  height: inherit;
+  width: 65px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.right-update{
+  background-color:#07c160;
+  height: inherit;
+  width: 65px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

@@ -1,0 +1,18 @@
+/* subpageMe/pages/nickname/index.wxss */
+.nickname{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 40rpx;
+}
+.nickname input{
+  text-align: right;
+}
+.confirm-box{
+  height: 800rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}

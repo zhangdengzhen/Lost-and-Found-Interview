@@ -1,0 +1,17 @@
+<!--pages/me/index.wxml-->
+<view class="me">
+  <view bindtap="handleMy" class="me-header van-hairline--bottom">
+    <van-image width="3rem" height="3rem" round src="{{avator}}" />
+    <view class="userinfo">
+      <text>{{nickname}}</text>
+      <text>{{school}}</text>
+    </view>
+    <van-icon style="color:#9699a6;margin-right: 15rpx;" name="arrow" />
+  </view>
+
+  <van-cell-group >
+  <!-- <van-cell title="我的申诉"  bindtap="handleToProblem" border="{{ true }}"  is-link/> -->
+  <van-cell title="问题反馈"  bindtap="handleToProblem" border="{{ true }}"  is-link/>
+  <!-- <van-cell title="在线咨询"   border="{{ true }}" is-link/> -->
+</van-cell-group>
+</view>

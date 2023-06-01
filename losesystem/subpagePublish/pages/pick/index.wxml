@@ -1,0 +1,16 @@
+<!--subpagePublish/pages/lose/index.wxml-->
+<van-cell-group>
+  <van-field required model:value="{{ title }}" placeholder="捡到了xxx的学生证/其他物品名" border="{{ true }}" label="标题" autosize="{{true}}" />
+  <van-field required model:value="{{ category }}" disable placeholder="点击选择类别" border="{{ true }}" bind:tap="PopSelect" label="类别" autosize="{{true}}" />
+  <van-field required model:value="{{ place }}" placeholder="如，失物招领处，xx门卫处" border="{{ true }}" label="领取地点" autosize="{{true}}" />
+  <van-field required model:value="{{ detail }}" placeholder="详细描述，如物品颜色，丢失时间" border="{{ true }}" label="详细描述" autosize="{{true}}" />
+  <van-field required model:value="{{ phone }}" placeholder="手机号/qq/微信/邮箱" border="{{ true }}" label="联系方式" autosize="{{true}}" />
+  <van-uploader bind:after-read="afterRead" file-list="{{ fileList }}" deletable="{{ true }}" bind:delete="handledelete" />
+</van-cell-group>
+
+<view class="button">
+  <van-button type="primary" bindtap="confirm">确认发布</van-button>
+</view>
+<van-popup show="{{ show }}" round position="bottom">
+  <van-picker bind:cancel="onCancel" show-toolbar title="类别" bind:confirm="onConfirm" wx:if="{{ show }}" columns="{{ columns }}" bind:change="onChange" />
+</van-popup>

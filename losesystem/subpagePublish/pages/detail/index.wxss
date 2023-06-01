@@ -1,0 +1,79 @@
+/* subpagePublish/pages/detail/index.wxss */
+.detail{
+  padding: 30rpx 20rpx;
+}
+.share{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  background-color: #f7f8fa;
+  margin-bottom: 10rpx;
+}
+.share .share-left{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.share .share-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.share .share-right text{
+  padding: 10rpx 0rpx;
+}
+.share .share-left text{
+  margin-left: 10rpx;
+}
+.title{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 10rpx 0;
+}
+.title text:nth-of-type(1){
+  flex-shrink: 0;
+}
+.title text:nth-of-type(2){
+  flex-grow: 1;
+}
+.detail_detail{
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  padding: 10rpx 0;
+}
+.detail_detail textarea{
+  flex-grow: 1;
+}
+.users{
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10rpx 0;
+}
+
+.users .nickname{
+  flex-grow: 1;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.users .nickname text{
+  margin: 0 20rpx;
+}
+.imglist{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+}
+.imglist text{
+  flex-shrink: 0;
+}
+.imglist .imglist_2{
+  flex-grow: 1;
+  padding-left: 20rpx;
+}

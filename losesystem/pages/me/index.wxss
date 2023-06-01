@@ -1,0 +1,22 @@
+/* pages/me/index.wxss */
+
+.me-header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  
+}
+
+.userinfo{
+  margin-left: 20rpx;
+  flex-grow: 1;
+}
+.userinfo text{
+  display: block;
+  padding: 5rpx;
+}
+.userinfo text:nth-of-type(2){
+  font-size: 18rpx;
+}

@@ -1,0 +1,128 @@
+/* subpageChat/pages/chat/index.wxss */
+.chatroom{
+  height: 100%;
+}
+.chat-left-message{
+  display: flex;
+  padding: 30rpx 20rpx;
+  justify-content: start;
+  align-items: center;
+}
+.chat-left-message text{
+  margin-left: 30rpx;
+  flex-grow: 0.75;
+  padding:25rpx 20rpx;
+}
+.chat-left-img{
+  display: flex;
+  padding: 30rpx 20rpx;
+  justify-content: start;
+
+}
+.chat-left-img .img{
+  align-items: flex-start;
+  margin-left: 30rpx;
+  max-width: 500rpx;
+}
+
+.chat-right-message{
+  display: flex;
+  padding: 30rpx 20rpx;
+  justify-content: flex-end;
+  align-items: center;
+}
+.chat-right-message text{
+  margin-right: 30rpx;
+  flex-grow: 0.75;
+  padding:25rpx 20rpx;
+  text-align: right;
+}
+.chat-right-img{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 30rpx 20rpx;
+}
+.chat-right-img .img2{
+  align-self: flex-start;
+  margin-right: 30rpx;
+  max-width: 500rpx;
+}
+
+/* pages/chat/chat.wxss */
+.img-left{
+  float: left;
+  padding: 10rpx 10rpx;
+}
+.message-img-left{
+  float: left;
+  margin: 30rpx;
+}
+.font-left{
+  float: left;
+  max-width: 60%;
+  border-radius: 100rpx;
+  border:1px solid black;
+  padding: 30rpx;
+  background-color: #ffffff;
+}
+.img-right{
+  float: right;
+  padding: 10rpx 10rpx;
+}
+.font-right{
+  float: right;
+  max-width: 60%;
+  border-radius: 100rpx;
+  border:1px solid black;
+  padding: 30rpx;
+  background-color: #ffffff;
+}
+.message-img-right{
+  float:right;
+  margin:30rpx;
+}
+
+/* 底部输入框 */
+.say {
+  height: 100rpx;
+  box-shadow: 1px -1px 1px #e3e3e3;
+  position: fixed;
+  width: 700rpx;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 30rpx;
+  justify-content: space-between;
+  background-color: #fff;
+} 
+/* .say image {
+  width: 50rpx;
+  height: 50rpx;
+} */
+.say .send text   {
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90rpx;
+  height: 90rpx;
+  background-color: #07c160;
+}
+ 
+ 
+.say1 {
+  background-color: #F5F5F5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80rpx;
+  width: 500rpx;
+  border-radius: 35rpx;
+  font-size: 28rpx;
+  padding-left: 20rpx;
+ 
+}

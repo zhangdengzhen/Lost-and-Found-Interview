@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-radio-group": "@vant/weapp/radio-group/index"
+  },
+  "navigationBarTitleText": "首页"
+}

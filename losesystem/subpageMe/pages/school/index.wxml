@@ -1,0 +1,8 @@
+<!--subpageMe/pages/nickname/index.wxml-->
+<view class="nickname van-hairline--bottom" >
+   <text>学校</text>
+   <input type="nickname" model:value="{{nickname}}" placeholder="请输入学校名称"/>
+</view>
+<view class="confirm-box">
+  <van-button bindtap="confirm" type="primary" class="confirm">确认修改</van-button>
+</view>

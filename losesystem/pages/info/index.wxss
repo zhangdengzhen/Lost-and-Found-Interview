@@ -1,0 +1,14 @@
+/* pages/info/index.wxss */
+.info{
+  height: 100%;
+}
+.item{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10rpx 10rpx 10rpx 20rpx;
+  justify-content: start;
+  align-items: center;
+}
+.item text{
+  margin-left: 30rpx;
+}

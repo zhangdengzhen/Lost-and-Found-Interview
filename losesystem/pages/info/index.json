@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-image": "@vant/weapp/image/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-radio-group": "@vant/weapp/radio-group/index"
+  },
+  "navigationBarTitleText": "消息"
+}

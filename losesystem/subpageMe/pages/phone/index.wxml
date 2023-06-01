@@ -1,0 +1,21 @@
+<van-cell-group>
+  <van-field model:value="{{ phone }}" center clearable label="短信验证码" placeholder="请输入手机号" border="{{ false }}" />
+  <van-field model:value="{{ sms }}" center clearable label="短信验证码" placeholder="请输入短信验证码" border="{{ false }}" use-button-slot>
+
+    <van-count-down wx:if="{{status}}" slot="button" use-slot time="{{ time }}" bind:change="onChange" bind:finish="finished">
+      <van-button size="small" disabled="{{status}}" type="primary">
+        <text>{{ timeData.seconds }}</text>
+      </van-button>
+    </van-count-down>
+    <van-button wx:else slot="button" bind:click="start" size="small" type="primary">
+      发送验证码
+    </van-button>
+
+  </van-field>
+</van-cell-group>
+
+<view style="text-align: center;margin-top: 100rpx;">
+  <van-button  bind:click="confirm"  size="small" type="primary">
+  确认
+</van-button>
+</view>

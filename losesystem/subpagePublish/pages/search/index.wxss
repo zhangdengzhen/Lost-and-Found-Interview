@@ -1,0 +1,43 @@
+/* subpagePublish/pages/search/index.wxss */
+.search {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.home-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx 20rpx;
+  justify-content: space-between;
+}
+
+.home-scroll {
+  flex-grow: 1;
+}
+
+.home-content text:nth-of-type(1) {
+  padding-left: 20rpx;
+  flex-grow: 1;
+}
+
+.home-content text:nth-of-type(2) {
+  align-self: flex-end;
+}
+
+.upload {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.upload .show {
+  margin: 4px 0;
+  width: 8rem;
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+

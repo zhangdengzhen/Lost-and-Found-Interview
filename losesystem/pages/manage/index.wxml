@@ -1,0 +1,17 @@
+<!--pages/manage/index.wxml-->
+<view class="manage">
+  <view class="manage-panel ">
+    <view bindtap="handlelose" class="manage-lose van-hairline--surround">
+      <van-icon name="flower-o" class="manage-icon" size="45rpx" color="#e73535" />
+        <text>我丢失了物品</text>
+    </view>
+    <view bindtap="handlepick" class="manage-pick van-hairline--surround">
+      <van-icon name="search" class="manage-icon" size="45rpx" />
+        <text>我捡到了物品</text>
+    </view>
+    <view bindtap="handlePublish" class="manage-me-manage van-hairline--surround">
+      <van-icon name="user-circle-o" class="manage-icon" size="45rpx" color="#1d85ed"/>
+        <text>我的发布</text>
+    </view>
+  </view>
+</view>

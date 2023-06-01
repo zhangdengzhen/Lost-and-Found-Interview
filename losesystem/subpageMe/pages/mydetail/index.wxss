@@ -1,0 +1,73 @@
+/* subpageMe/pages/mydetail/index.wxss */
+.mydetail .mydetail-avator{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+align-items: center;
+padding:20rpx 0;
+}
+.mydetail{
+  color: black;
+}
+.avatar-wrapper{
+  padding: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  margin: 0 40rpx 0 0;
+
+}
+.avatar {
+  display: block;
+  width: 56px;
+  height: 56px;
+}
+.mydetail text{
+  margin: 0 0 0 40rpx;
+}
+
+.mydetail .mysetail-nickname{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding:20rpx 0;
+}
+/* .mydetail input{
+  flex-grow: 1;
+  text-align: right;
+  margin: 0 40rpx 0 0;
+} */
+.mydetail .mysetail-nickname .mysetail-nickname-right{
+  color: #808080;
+}
+.mydetail .mysetail-nickname .mysetail-nickname-right text{
+  margin-right: 30rpx;
+}
+.mydetail .mydetail-openid{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding:20rpx 0;
+}
+.mydetail .mydetail-openid text:nth-of-type(2){
+  color: #808080;
+  margin-right: 55rpx;
+}
+.mydetail .mydetail-openid .mydetail-openid-right text{
+  margin-right: 30rpx;
+}
+.mydetail .mydetail-school{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding:20rpx 0;
+}
+.mydetail .mydetail-school  .mydetail-school-right{
+  color: #808080;
+}
+.mydetail .mydetail-school  .mydetail-school-right text{
+  margin-right: 30rpx;
+}

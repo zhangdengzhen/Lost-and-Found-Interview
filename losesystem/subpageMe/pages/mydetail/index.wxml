@@ -1,0 +1,43 @@
+<!--subpageMe/pages/mydetail/index.wxml-->
+<view class="mydetail">
+  <view class="mydetail-avator van-hairline--top-bottom">
+    <text>头像</text>
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image class="avatar" src="{{avatarUrl}}"></image>
+    </button>
+  </view>
+  <view class="mysetail-nickname van-hairline--top-bottom" bindtap="toNickname">
+    <text>昵称</text>
+    <view class="mysetail-nickname-right">
+      <text>{{nickname}}</text>
+      <van-icon name="arrow" />
+    </view>
+  </view>
+  <view class="mysetail-nickname van-hairline--top-bottom" bindtap="toPhone">
+    <text>手机号</text>
+    <view class="mysetail-nickname-right">
+      <text>{{phone}}</text>
+      <van-icon name="arrow" />
+    </view>
+  </view>
+  <view class="mydetail-school van-hairline--top-bottom" bindtap="toSchool">
+    <text>学校</text>
+    <view class="mydetail-school-right">
+      <text>{{school}}</text>
+      <van-icon name="arrow" />
+    </view>
+  </view>
+  <view class="mydetail-school van-hairline--top-bottom" bindtap="toIndentify">
+    <text>实名认证</text>
+    <view class="mydetail-school-right">
+      <text wx:if="{{!id_number}}">未实名</text>
+      <text wx:else>{{id_number}}</text>
+      <van-icon name="arrow" />
+    </view>
+  </view>
+  <view class="mydetail-openid van-hairline--top-bottom">
+    <text>openid</text>
+    <text>{{openid}}</text>
+  </view>
+
+</view>
