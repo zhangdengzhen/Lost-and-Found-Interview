@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.zhangdengzhen.demo.mapper.UsersMapper">
+
+    <select id="selectPage" resultType="top.zhangdengzhen.demo.dao.Users">
+        select id,nickname,avator,phone,openid,school ,authorize from users  limit #{currIndex},#{pageSize}
+    </select>
+</mapper>

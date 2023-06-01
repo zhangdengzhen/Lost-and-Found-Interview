@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.zhangdengzhen.demo.mapper.SubscribeMapper">
+    <resultMap id="getSubscribe" type="SubscribeCategory">
+
+        <result property="id" column="id"></result>
+        <result property="openid" column="openid"></result>
+        <result property="nickname" column="nickname"></result>
+        <result property="headimgurl" column="headimgurl"></result>
+        <result property="school" column="school"></result>
+        <result property="country" column="country"></result>
+        <result property="sex" column="sex"></result>
+        <result property="receive" column="receive"></result>
+        <association property="category" column="category" javaType="Category">
+            <result property="id" column="c_id"></result>
+            <result property="name" column="name"></result>
+        </association>
+    </resultMap>
+    <select id="mySubscribe" resultMap="getSubscribe">
+        select s.id,s.openid,s.nickname,s.headimgurl,s.school,s.country,s.category,s.sex,s.receive,c.id as c_id,c.name
+        from subscribe s
+            left join  category c
+                on s.category=c.id
+        where s.openid = #{openid}
+    </select>
+</mapper>

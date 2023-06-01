@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.apistd.uni:uni-sdk:0.0.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../apache-maven-3.9.0-bin/apache-maven-3.9.0/rep/com/apistd/uni/uni-sdk/0.0.4/uni-sdk-0.0.4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../../../apache-maven-3.9.0-bin/apache-maven-3.9.0/rep/com/apistd/uni/uni-sdk/0.0.4/uni-sdk-0.0.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../../apache-maven-3.9.0-bin/apache-maven-3.9.0/rep/com/apistd/uni/uni-sdk/0.0.4/uni-sdk-0.0.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

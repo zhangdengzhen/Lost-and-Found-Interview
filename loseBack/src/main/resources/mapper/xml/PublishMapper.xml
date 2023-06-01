@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.zhangdengzhen.demo.mapper.PublishMapper">
+    <resultMap id="UserPublish" type="Publish">
+        <id property="id" column="id"></id>
+        <result property="title" column="title"></result>
+        <result property="place" column="place"></result>
+        <result property="detail" column="detail"></result>
+        <result property="contact" column="contact"></result>
+        <result property="type" column="type"></result>
+        <result property="time" column="time"></result>
+        <result property="status" column="status"></result>
+        <result property="deleted" column="deleted"></result>
+        <association property="category" column="c_id" javaType="Category">
+            <result property="id" column="id"></result>
+            <result property="name" column="category"></result>
+        </association>
+        <association property="users" column="openid" javaType="Users">
+            <result property="id" column="u_id"></result>
+            <result property="openid" column="openid"></result>
+            <result property="nickname" column="nickname"></result>
+            <result property="avator" column="avator"/>
+            <result property="phone" column="phone"></result>
+            <result property="school" column="school"></result>
+            <result property="authorize" column="authorize"></result>
+        </association>
+        <collection property="imgs" column="uuid" ofType="Img">
+            <result property="id" column="i_id"></result>
+            <result property="uuid" column="uuid"></result>
+            <result property="url" column="url"></result>
+            <result property="filename" column="filename"></result>
+        </collection>
+
+    </resultMap>
+
+   <select id="selectByUserOpenid" resultMap="UserPublish">
+
+       select p.id,
+       p.title,
+       p.place,
+       p.detail,
+       p.contact,
+       p.type,
+       p.time,
+       p.status,
+       p.deleted,
+       c.id c_id,
+       c.name category,
+       u.openid ,
+       u.id u_id,
+       u.nickname,
+       u.avator,
+       u.openid,
+       u.authorize,
+       i.id i_id,
+       i.filename,
+       i.url,
+       i.uuid 
+       from publish p
+       left join users u on p.useropenid = u.openid
+       left join category c on p.itemCategory=c.id 
+       left join img i on p.imguuid = i.uuid where p.useropenid = #{openid} and p.deleted= 0
+   </select>
+    <select id="selectByTitle" resultMap="UserPublish">
+        select
+        p.id,
+       p.title,
+       p.place,
+       p.detail,
+       p.contact,
+       p.type,
+       p.time,
+        p.status,
+        p.deleted,
+       c.id c_id,
+       c.name category,
+       u.openid ,
+       u.id u_id,
+       u.nickname,
+       u.avator,
+       u.openid,
+       u.authorize,
+       i.id i_id,
+       i.filename,
+       i.url,
+       i.uuid
+        from publish p
+        left join users u
+        on p.useropenid = u.openid
+         left join img i
+         on p.imguuid=i.uuid
+         left join category c
+         on  p.itemCategory= c.id where p.title like  "%" #{title} "%" and p.deleted = 0
+    </select>
+<!--    获取所有发布内容
+     "currIndex", (currPage-1)*pageSize;
+      "pageSize", pageSize;-->
+    <select id="selectAll" resultMap="UserPublish">
+          select
+        p.id,
+       p.title,
+       p.place,
+       p.detail,
+       p.contact,
+       p.type,
+       p.time,
+        p.status,
+        p.deleted,
+       c.id c_id,
+       c.name category,
+       u.id u_id,
+       u.openid,
+       u.nickname,
+       u.avator,
+       u.phone,
+       u.school,
+       u.authorize,
+       i.id i_id,
+       i.filename,
+       i.url,
+       i.uuid
+        from publish p
+        left join users u
+        on p.useropenid = u.openid
+         left join img i
+         on p.imguuid=i.uuid
+         left join category c
+         on  p.itemCategory= c.id limit #{currIndex} , #{pageSize}
+    </select>
+    <select id="findById" resultMap="UserPublish">
+          select
+        p.id,
+       p.title,
+       p.place,
+       p.detail,
+       p.contact,
+       p.type,
+       p.time,
+        p.status,
+        p.deleted,
+       c.id c_id,
+       c.name category,
+       u.openid ,
+       u.id u_id,
+       u.nickname,
+       u.avator,
+       u.openid,
+       u.school,
+       u.phone,
+       u.authorize,
+       i.id i_id,
+       i.filename,
+       i.url,
+       i.uuid
+        from publish p
+        left join users u
+        on p.useropenid = u.openid
+         left join img i
+         on p.imguuid=i.uuid
+         left join category c
+         on  p.itemCategory= c.id where p.id=#{id}
+    </select>
+    <select id="findByimguuid" resultMap="UserPublish">
+        select
+            p.id,
+            p.title,
+            p.place,
+            p.detail,
+            p.contact,
+            p.type,
+            p.time,
+            p.status,
+            p.deleted,
+            c.id c_id,
+            c.name category,
+            u.openid ,
+            u.id u_id,
+            u.nickname,
+            u.avator,
+            u.openid,
+            u.school,
+            u.phone,
+            u.authorize,
+            i.id i_id,
+            i.filename,
+            i.url,
+            i.uuid
+        from publish p
+                 left join users u
+                           on p.useropenid = u.openid
+                 left join img i
+                           on p.imguuid=i.uuid
+                 left join category c
+                           on  p.itemCategory= c.id where p.imguuid=#{imguuid}
+    </select>
+<!--    根据类别获取数据-->
+    <select id="selectByType" resultMap="UserPublish">
+          select
+        p.id,
+       p.title,
+       p.place,
+       p.detail,
+       p.contact,
+       p.type,
+       p.time,
+        p.status,
+        p.deleted,
+       c.id c_id,
+       c.name category,
+       u.openid ,
+       u.id u_id,
+       u.nickname,
+       u.avator,
+       u.openid,
+       u.school,
+       u.phone,
+       u.authorize,
+       i.id i_id,
+       i.filename,
+       i.url,
+       i.uuid
+        from publish p
+        left join users u
+        on p.useropenid = u.openid
+         left join img i
+         on p.imguuid=i.uuid
+         left join category c
+         on  p.itemCategory= c.id where p.type=#{type}  and p.status='ing' and p.deleted=0 limit #{currIndex} , #{pageSize}
+    </select>
+
+    <select id="getByUserOpenidAndType" resultMap="UserPublish">
+          select
+        p.id,
+       p.title,
+       p.place,
+       p.detail,
+       p.contact,
+       p.type,
+       p.time,
+        p.status,
+        p.deleted,
+       c.id c_id,
+       c.name category,
+       u.openid ,
+       u.id u_id,
+       u.nickname,
+       u.avator,
+       u.openid,
+       u.authorize,
+       i.id i_id,
+       i.filename,
+       i.url,
+       i.uuid
+        from publish p
+        left join users u
+        on p.useropenid = u.openid
+         left join img i
+         on p.imguuid=i.uuid
+         left join category c
+         on  p.itemCategory= c.id where p.useropenid=#{openid} and p.type=#{type} and p.deleted=0 and p.status="ing"
+    </select>
+    <select id="getByOpenidAndStatus" resultMap="UserPublish">
+        select
+            p.id,
+            p.title,
+            p.place,
+            p.detail,
+            p.contact,
+            p.type,
+            p.time,
+            p.status,
+            p.deleted,
+            c.id c_id,
+            c.name category,
+            u.openid ,
+            u.id u_id,
+            u.nickname,
+            u.avator,
+            u.openid,
+            u.authorize,
+            i.id i_id,
+            i.filename,
+            i.url,
+            i.uuid
+        from publish p
+                 left join users u
+                           on p.useropenid = u.openid
+                 left join img i
+                           on p.imguuid=i.uuid
+                 left join category c
+                           on  p.itemCategory= c.id where p.useropenid=#{openid} and p.status=#{status} and p.deleted=0
+    </select>
+    <select id="getStatusByPage"  resultMap="UserPublish">
+        select
+            p.id,
+            p.title,
+            p.place,
+            p.detail,
+            p.contact,
+            p.type,
+            p.time,
+            p.status,
+            p.deleted,
+            c.id c_id,
+            c.name category,
+            u.openid ,
+            u.id u_id,
+            u.nickname,
+            u.avator,
+            u.openid,
+            u.authorize,
+            i.id i_id,
+            i.filename,
+            i.url,
+            i.uuid
+        from publish p
+                 left join users u
+                           on p.useropenid = u.openid
+                 left join img i
+                           on p.imguuid=i.uuid
+                 left join category c
+                           on  p.itemCategory= c.id where p.status="ed" limit #{currIndex} , #{pageSize}
+    </select>
+    <select id="getStatusByPageCount" resultType="java.lang.Integer">
+        select
+           count(*)
+        from publish p
+                 left join users u
+                           on p.useropenid = u.openid
+                 left join img i
+                           on p.imguuid=i.uuid
+                 left join category c
+                           on  p.itemCategory= c.id where p.status="ed"
+    </select>
+    <insert id="insert" >
+        insert into publish (id,useropenid,imguuid,title,itemCategory,place,detail,contact,type,time,status,deleted)
+  values (#{id},#{useropenid},#{imguuid},#{title},#{itemCategory},#{place},#{detail},#{contact},#{type},now(),"ing",0)
+    </insert>
+    <select id="getCount" resultType="java.lang.Integer">
+          select count(*) from publish
+    </select>
+    <select id="getCountbyType" resultType="java.lang.Integer">
+          select count(*) from publish  p where p.type=#{type}
+    </select>
+</mapper>

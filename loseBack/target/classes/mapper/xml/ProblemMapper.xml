@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.zhangdengzhen.demo.mapper.ProblemMapper">
+     <resultMap id="problem-img" type="ProblemImg">
+          <result property="id" column="id"></result>
+          <result property="openid" column="openid"></result>
+          <result property="detail" column="detail"></result>
+
+          <result property="time" column="time"></result>
+          <result property="concat" column="concat"></result>
+          <collection property="imgs"  ofType="Img">
+               <result property="id" column="i_id"></result>
+               <result property="uuid" column="uuid"></result>
+               <result property="url" column="url"></result>
+               <result property="filename" column="filename"></result>
+          </collection>
+     </resultMap>
+     <select id="selectByPage" resultMap="problem-img">
+          select p.id,p.openid,p.detail,p.time,p.concat,i.id i_id,i.uuid,i.url,i.filename from problem p left join img i on p.imguuid=i.uuid limit #{currIndex} , #{pageSize}
+     </select>
+     <select id="selectCount" resultType="java.lang.Integer">
+          select count(*) from problem
+     </select>
+</mapper>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.springframework:spring-jdbc:5.3.13">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../apache-maven-3.9.0-bin/apache-maven-3.9.0/rep/org/springframework/spring-jdbc/5.3.13/spring-jdbc-5.3.13.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../../../apache-maven-3.9.0-bin/apache-maven-3.9.0/rep/org/springframework/spring-jdbc/5.3.13/spring-jdbc-5.3.13-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../../apache-maven-3.9.0-bin/apache-maven-3.9.0/rep/org/springframework/spring-jdbc/5.3.13/spring-jdbc-5.3.13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
